@@ -95,6 +95,8 @@ h5{
 <a href="#">Salary</a>
 <a href="#">Leave</a>
 <a href="#">Notifications</a>
+<a href="#">Reports</a>
+<a href="#">Management</a>
 <a href="index.html" class="mt-4 text-danger">Logout</a>
 </div>
 
@@ -131,6 +133,46 @@ h5{
 <div class="feature-icon">💰</div>
 <h5>Salary</h5>
 <p>Payroll & salary details</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="dashboard-card text-center">
+<div class="feature-icon">📅</div>
+<h5>Leave Management</h5>
+<p>Apply & track employee leaves</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="dashboard-card text-center">
+<div class="feature-icon">🏆</div>
+<h5>Achievements</h5>
+<p>Employee performance awards</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="dashboard-card text-center">
+<div class="feature-icon">🔔</div>
+<h5>Notifications</h5>
+<p>Company announcements & alerts</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="dashboard-card text-center">
+<div class="feature-icon">📊</div>
+<h5>Reports</h5>
+<p>Generate and view reports</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="dashboard-card text-center">
+<div class="feature-icon">🧑‍💼</div>
+<h5>Management</h5>
+<p>Administrative controls & settings</p>
 </div>
 </div>
 
@@ -204,10 +246,10 @@ function displayEmployees(){
 
         let actionCell = row.insertCell(3);
 
-        let editBtn = document.createElement("button");
-        editBtn.innerText = "Edit";
-        editBtn.className = "btn btn-warning btn-sm me-2";
-        editBtn.onclick = function(){
+        let updateBtn = document.createElement("button");
+        updateBtn.innerText = "Update";
+        updateBtn.className = "btn btn-warning btn-sm me-2";
+        updateBtn.onclick = function(){
             document.getElementById("empName").value = emp.name;
             document.getElementById("empEmail").value = emp.email;
             document.getElementById("empPosition").value = emp.position;
@@ -222,7 +264,7 @@ function displayEmployees(){
             displayEmployees();
         };
 
-        actionCell.appendChild(editBtn);
+        actionCell.appendChild(updateBtn);
         actionCell.appendChild(deleteBtn);
     });
 }
