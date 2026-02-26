@@ -10,70 +10,62 @@
 <style>
 
 body{
-    background:#e9e6e6;
+    background:#f4f6f9;
     font-family:'Segoe UI', sans-serif;
 }
 
-/* Main Section */
-.main-section{
-    background:#1f1a9c;
-    margin:40px auto;
-    border-radius:20px;
-    padding:50px;
+/* Sidebar */
+.sidebar{
+    background:#2c3e50;
+    min-height:100vh;
+    padding:25px 15px;
     color:white;
-    box-shadow:0px 15px 30px rgba(0,0,0,0.2);
-    animation: fadeSlide 1s ease forwards;
-    opacity:0;
 }
 
-@keyframes fadeSlide{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* Navbar */
-.navbar-brand{
-    font-size:22px;
+.sidebar h4{
     font-weight:600;
-    color:white !important;
+    margin-bottom:30px;
 }
 
-/* Welcome */
-.welcome-title{
-    font-size:50px;
-    font-weight:700;
+.sidebar a{
+    display:block;
+    color:#dcdcdc;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:8px;
+    margin-bottom:10px;
+    transition:0.3s;
 }
 
-.welcome-text{
-    font-size:20px;
-    margin-bottom:40px;
+.sidebar a:hover{
+    background:#34495e;
+    color:white;
+}
+
+/* Topbar */
+.topbar{
+    background:white;
+    padding:15px 25px;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.08);
+    border-radius:12px;
 }
 
 /* Cards */
 .dashboard-card{
-    background:#ffffff;
-    color:black;
-    border-radius:18px;
-    padding:30px;
-    box-shadow:0px 8px 20px rgba(0,0,0,0.15);
-    transition:all 0.4s ease;
-    cursor:pointer;
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
     height:100%;
 }
 
 .dashboard-card:hover{
-    transform:translateY(-10px) scale(1.03);
-    box-shadow:0px 15px 35px rgba(0,0,0,0.25);
+    transform:translateY(-6px);
 }
 
 .feature-icon{
-    font-size:40px;
+    font-size:35px;
     margin-bottom:15px;
 }
 
@@ -81,106 +73,86 @@ h5{
     font-weight:600;
 }
 
-/* Responsive */
-@media (min-width:768px){
-    .welcome-title{
-        font-size:56px;
-    }
-}
-
 </style>
 </head>
 <body>
 
-<div class="container">
-<div class="main-section">
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark mb-4">
 <div class="container-fluid">
-<a class="navbar-brand" href="#">Chandana Groups</a>
-<div class="ms-auto">
-<a class="btn btn-light" href="index.html">Logout</a>
-</div>
-</div>
-</nav>
+<div class="row">
 
-<!-- Welcome Section -->
-<div class="text-center">
-<h1 class="welcome-title">Welcome Back!</h1>
-<p class="welcome-text">
-You have successfully signed in to Chandana Groups Employee Portal.
-</p>
+<!-- Sidebar -->
+<div class="col-md-3 col-lg-2 sidebar">
+<h4>Chandana Groups</h4>
+<a href="#">Dashboard</a>
+<a href="#">Profile</a>
+<a href="#">Attendance</a>
+<a href="#">Salary</a>
+<a href="#">Leave</a>
+<a href="#">Notifications</a>
+<a href="index.html" class="mt-4 text-danger">Logout</a>
 </div>
 
-<!-- Features Grid -->
+<!-- Main Content -->
+<div class="col-md-9 col-lg-10 p-4">
+
+<div class="topbar mb-4">
+<h3>Welcome Back 👋</h3>
+<p class="mb-0 text-muted">Employee Management Dashboard</p>
+</div>
+
 <div class="row g-4">
 
-<!-- Employee Profile -->
-<div class="col-md-3">
+<div class="col-md-4">
 <div class="dashboard-card text-center">
 <div class="feature-icon">👤</div>
 <h5>Employee Profile</h5>
-<p>View and update personal information</p>
+<p>Manage personal details</p>
 </div>
 </div>
 
-<!-- Attendance -->
-<div class="col-md-3">
+<div class="col-md-4">
 <div class="dashboard-card text-center">
 <div class="feature-icon">🗓️</div>
 <h5>Attendance</h5>
-<p>Track daily attendance records</p>
+<p>View daily attendance</p>
 </div>
 </div>
 
-<!-- Salary -->
-<div class="col-md-3">
+<div class="col-md-4">
 <div class="dashboard-card text-center">
 <div class="feature-icon">💰</div>
 <h5>Salary</h5>
-<p>Manage salary and payroll details</p>
+<p>Payroll & salary details</p>
 </div>
 </div>
 
-<!-- Leave Management -->
-<div class="col-md-3">
+<div class="col-md-4">
 <div class="dashboard-card text-center">
 <div class="feature-icon">📅</div>
 <h5>Leave Management</h5>
-<p>Apply and manage leave requests</p>
+<p>Apply & track leaves</p>
 </div>
 </div>
 
-<!-- Achievements -->
-<div class="col-md-3">
+<div class="col-md-4">
 <div class="dashboard-card text-center">
 <div class="feature-icon">🏆</div>
 <h5>Achievements</h5>
-<p>View awards and performance records</p>
+<p>Performance records</p>
 </div>
 </div>
 
-<!-- Notifications -->
-<div class="col-md-3">
+<div class="col-md-4">
 <div class="dashboard-card text-center">
 <div class="feature-icon">🔔</div>
 <h5>Notifications</h5>
-<p>Check alerts and company updates</p>
-</div>
-</div>
-
-<!-- Help -->
-<div class="col-md-3">
-<div class="dashboard-card text-center">
-<div class="feature-icon">❓</div>
-<h5>Help</h5>
-<p>Get support and assistance</p>
+<p>Company updates</p>
 </div>
 </div>
 
 </div>
 
+</div>
 </div>
 </div>
 
